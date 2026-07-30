@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #111;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  padding: 30px;
+}
+
+.table-container {
+  width: 98%;
+  margin: auto;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+}
+
+thead {
+  background-image: linear-gradient(#69b8de, #167fb0);
+}
+
+thead th {
+  padding: 18px;
+  font-size: 2rem;
+}
+
+tbody td {
+  padding: 18px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* ---------- ATTRIBUTE SELECTORS ---------- */
+
+tr[class="read"] {
+  background-image: linear-gradient(#034d03, #2da82d);
+}
+
+tr[class="to-read"] {
+  background-image: linear-gradient(#424842, #a2aba2);
+}
+
+tr[class="in-progress"] {
+  background-image: linear-gradient(#624b0d, #b98b2b);
+}
+
+span {
+  display: inline-block;
+}
+
+/* Status + Rate */
+
+span[class="status"],
+span[class^="rate"] {
+  height: 55px;
+  width: 180px;
+  padding: 10px;
+}
+
+/* Status inside Read rows */
+
+tr[class="read"] span[class="status"] {
+  border: 2px solid #0f850f;
+  border-radius: 30px;
+  background-image: linear-gradient(#79ff79, #2ae32a);
+}
+
+/* Status inside To Read rows */
+
+tr[class="to-read"] span[class="status"] {
+  border: 2px solid #c11d1d;
+  border-radius: 30px;
+  background-image: linear-gradient(#ff8b8b, #ff2d2d);
+}
+
+/* Status inside In Progress rows */
+
+tr[class="in-progress"] span[class="status"] {
+  border: 2px solid #8a6100;
+  border-radius: 30px;
+  background-image: linear-gradient(#dca933, #ba7c00);
+}
+
+/* ---------- RATE ---------- */
+
+span[class^="rate"] {
+  width: auto;
+}
+
+span[class^="rate"] > span {
+  border: 3px solid #9b9b9b;
+  border-radius: 50%;
+  margin: 5px;
+  width: 28px;
+  height: 28px;
+  background-color: #2b2b2b;
+}
+
+/* One */
+
+span[class~="one"] span:first-child {
+  background-image: linear-gradient(gold, goldenrod);
+}
+
+/* Two */
+
+span[class~="two"] span:nth-child(-n + 2) {
+  background-image: linear-gradient(gold, goldenrod);
+}
+
+/* Three */
+
+span[class~="three"] span {
+  background-image: linear-gradient(gold, goldenrod);
+}
+
+/* Hover */
+
+tbody tr:hover {
+  transform: scale(1.01);
+  transition: .3s;
+}
